@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>mahjongman_recruit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<style type="text/css">
+			.center{
+				text-align: center;
+			}
+			.button{
+				background-color: white;
+				opacity: 0.5;
+				margin: 10px;
+			}
+			
+			#background{
+				width: 100%;
+				z-index: -1;
+				position: absolute;
+				left: 0px;
+				top: -50px;
+			}
+			#submitdiv{
+				width: 60%;
+				margin-left: 20%;
+				padding-left: 40px;
+			}
+
+			input,select{
+				margin: 10px;
+			}
+
+		</style>
+
+		<!--abovue is CSS code-->
+		
+		<script type="text/javascript">
+			department=new Array();
+			department[0]=["登山", "野餐", "海景", "踏青", "攝影"];	// 戶外
+			department[1]=["購物", "藝文", "手作", "閱讀", "電影"];	// 室內
+			department[2]=["單車", "衝浪", "攀岩", "潛水"];			// 運動
+			department[3]=["酒吧", "夜市、小吃", "甜點、下午茶"];		// 美食
+
+			function renew(index){
+				for(var i=0;i<department[index].length;i++)
+					document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
+					document.myForm.member.length=department[index].length;	// 刪除多餘的選項
+			}
+		</script>
+
+		<!--abovue is JavaScript code-->
+		<div id="background">
+			<img src="./img/loginpic2.jpg" style="width: 100%; ">
+		</div>
+	
+
+		<div class="button" id="submitdiv">
+			<h2 style="padding-top: 30px;"> 個人資料 </h2>
+			姓：<input type="text" name="FirstName" ><br>
+			名：<input type="text" name="LastName" ><br>
+			身高：<input type="text" name="Height" ><br>
+			體重：<input type="text" name="Weight" ><br>
+			年齡: <input type="text" name="Age" ><br>
+			居住地：
+			<select name="YourLocation">
+　				<option value="Taipei">台北</option>
+　				<option value="Taoyuan">桃園</option>
+　				<option value="Hsinchu">新竹</option>
+				<option value="Miaoli">苗栗</option>
+			</select><br>
+			旅遊喜好：	
+   			<form 30px;" name="myForm">
+			<select size=5 onChange="renew(this.selectedIndex);">
+				<option value="戶外">戶外
+				<option value="室內">室內
+				<option value="運動">運動
+				<option value="美食">美食
+			</select><br>
+			<select name="member" size=5>
+				<option value="">請先選擇上方大項
+			</select>
+			</form>
+			<br>
+
+			<a href="./uploadpic.html"><input type="submit" value="Submit"></a>
+		</div>
+
+
+		</div>	
+
+		
+
+
+	</body>
